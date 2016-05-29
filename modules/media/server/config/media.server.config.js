@@ -7,7 +7,7 @@ var path = require('path'),
   config = require(path.resolve('./config/config'));
 
 /**
- * Test module init function.
+ * Media module init function.
  */
 module.exports = function (app, db) {
 
