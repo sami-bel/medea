@@ -13,6 +13,36 @@ function validateLength (v) {
     return v.length <= 15;
 }
 
+var ActorSchema =  new Schema({
+    name:{
+        type: String,
+        default: '',
+        required: 'name cannot be blank'
+    },
+    lastName: {
+        type: String,
+        default: '',
+        required: 'lastName cannot be blank'
+    },
+    description: {
+        type: String,
+        default: ''
+        // required: 'description cannot be blank'
+    },
+    timeIn: {
+        type: Date,
+        default: Date.now
+        // required: 'time in cannot be blank'
+    },
+
+    timeOut: {
+        type: Date,
+        default: Date.now
+        // required: 'time out cannot be blank'
+    }
+
+
+})
 /**
  * Film Schema
  */
@@ -21,35 +51,7 @@ var FilmSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    actors:[{
-        name:{
-            type: String,
-            default: '',
-            required: 'name cannot be blank'
-        },
-        lastName: {
-            type: String,
-            default: '',
-            required: 'lastName cannot be blank'
-        },
-        description: {
-            type: String,
-            default: '',
-            required: 'description cannot be blank'
-        },
-        timeIn: {
-            type: Date,
-            default: Date.now,
-            required: 'time in cannot be blank'
-        },
-
-        timeOut: {
-            type: Date,
-            default: Date.now,
-            required: 'time out cannot be blank'
-        }
-
-    }],
+    actors:[ActorSchema],
     description: {
         type: String,
         default: '',
